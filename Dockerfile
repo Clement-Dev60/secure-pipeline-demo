@@ -7,7 +7,9 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 WORKDIR /app
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# pip n'est utile qu'à l'installation : on le retire de l'image finale
+RUN pip install --no-cache-dir -r requirements.txt \
+    && pip uninstall -y pip
 
 COPY app.py .
 
