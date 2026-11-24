@@ -1,0 +1,5 @@
+-c requirements.txt
+pytest
+bandit
+pip-audit
+pip-tools
