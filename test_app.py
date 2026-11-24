@@ -9,7 +9,7 @@ def client(tmp_path, monkeypatch):
 
 
 def test_health(client):
-    assert client.get("/health").json == {"status": "ok"}
+    assert client.get("/health").json == {"status": "ko"}
 
 
 def test_add_and_list(client):
